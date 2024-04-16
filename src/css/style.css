@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: Akzidenz;
+		font-weight: 700;
+		font-style: normal;
+		src: url('/fonts/akzidenz/AkzidenzGroteskPro-BoldEx.otf') format('opentype');
+	}
+	@font-face {
+		font-family: Akzidenz;
+		font-weight: 500;
+		font-style: normal;
+		src: url('/fonts/akzidenz/AkzidenzGroteskPro-Md.otf') format('opentype');
+	}
+	@font-face {
+		font-family: Akzidenz;
+		font-weight: 400;
+		font-style: normal;
+		src: url('/fonts/akzidenz/AkzidenzGroteskPro-Regular.otf') format('opentype');
+	}
+
+	html {
+		font-family: Akzidenz, sistem-ui, sans-serif;
+	}
+}
+
+@layer components {
+	#app {
+		@apply pt-20 pb-10 sm:pb-16 min-h-screen flex flex-col justify-center items-center dark:text-white dark:bg-zinc-800;
+	}
+	.logo {
+		@apply text-2xl sm:text-4xl md:text-5xl font-bold;
+	}
+	.logo-sm {
+		@apply text-xl;
+	}
+	.button-primary {
+		@apply flex justify-center items-center bg-slate-200 dark:bg-indigo-500 enabled:dark:hover:bg-indigo-600 enabled:hover:bg-slate-300 disabled:opacity-40 disabled:cursor-default ease-linear duration-200 rounded-md font-medium px-5 py-2;
+	}
+	.button-secondary {
+		@apply mt-5 border border-black rounded-md hover:bg-slate-200 dark:border-white dark:hover:bg-zinc-600 ease-linear duration-200;
+	}
+	.placeholders-wrapper {
+		@apply flex flex-row;
+	}
+	.letter {
+		@apply mx-2 text-lg sm:text-3xl font-medium;
+	}
+	.keyboard {
+		@apply max-w-2xl mt-5 flex justify-center flex-wrap;
+	}
+	.keyboard-button {
+		@apply w-11 h-11 sm:h-14 sm:w-14 m-1 sm:m-1.5;
+	}
+	.hangman-img {
+		@apply w-32 h-32 sm:w-60 sm:h-60 mb-5;
+	}
+	.result-header {
+		@apply text-2xl font-bold mt-4;
+	}
+	.result-header.won {
+		@apply text-lime-600;
+	}
+	.result-header.lose {
+		@apply text-red-600;
+	}
+	.result-word {
+		@apply font-medium uppercase;
+	}
+}
